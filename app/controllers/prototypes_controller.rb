@@ -19,6 +19,8 @@ class PrototypesController < ApplicationController
 
   def show
     @prototype = Prototype.find(params[:id])
+    @comment = Comment.new
+    @comments = @prototype.comments.includes(:user) #←ここは@prototypeに入っている情報から引っ張ってきているため、(:user)しか書いていない？
   end
 
   def edit
