@@ -32,7 +32,7 @@
       </div>
     </header>
      <% if user_signed_in? %>
-      <p>こんにちは、<a href="#"><%= current_user.name %></a>さん</p>
+      <p>こんにちは、<a href="/users/<%= current_user.id %>"><%= current_user.name %></a>さん</p>
      <% end %>
     <%= yield %>
     <footer class="footer">
