@@ -33,7 +33,7 @@ class PrototypesController < ApplicationController
     @prototype = Prototype.find(params[:id])
       if @prototype.update(prototype_params)
        # ↑この@を無しにするとrenderでeditアクションに戻った際に、フォームの情報はのこらない。理屈は？
-        redirect_to root_path
+        redirect_to prototype_path(@prototype.id)
       else
         render :edit
       end
